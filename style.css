@@ -1,0 +1,196 @@
+/* Configurações Gerais e Cores Tema OBX */
+:root {
+    --pogue-gold: #f9a620;
+    --sunset-orange: #ff4e50;
+    --ocean-blue: #1a365d;
+    --sand-white: #f7f5f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--ocean-blue), #0f172a);
+    color: var(--sand-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--pogue-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+header .subtitle {
+    font-style: italic;
+    color: var(--sunset-orange);
+}
+
+/* Estrutura do Flashcard com Animação 3D */
+.card-container {
+    width: 350px;
+    height: 250px;
+    perspective: 1000px; /* Cria o efeito de profundidade 3D */
+    margin-bottom: 20px;
+}
+
+.flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    cursor: pointer;
+}
+
+/* Classe aplicada via JS para girar o card */
+.flashcard.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde o verso enquanto gira */
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border: 3px solid var(--pogue-gold);
+}
+
+.card-front {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: white;
+}
+
+.card-back {
+    background: linear-gradient(45deg, var(--pogue-gold), var(--sunset-orange));
+    color: #1a1a1a;
+    transform: rotateY(180deg);
+}
+
+.card-face h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.card-face p {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.tap-hint {
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 10px;
+    opacity: 0.6;
+}
+
+/* Botão */
+#next-btn {
+    background-color: var(--sunset-orange);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(255, 78, 80, 0.4);
+}
+
+#next-btn:hover {
+    background-color: var(--pogue-gold);
+    transform: scale(1.05);
+}
+
+/* Seção de Desenhos (Representados por formas CSS estilizadas) */
+.obx-drawings {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.drawing-item {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--pogue-gold);
+}
+
+.drawing {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 10px auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+}
+
+/* Desenho estilizado da Kombi (Representação minimalista por bordas/cores) */
+.drawing.kombi {
+    background-color: #8ed1fc;
+    border-radius: 10px 10px 5px 5px;
+    border-bottom: 15px solid #fff;
+    position: relative;
+}
+.drawing.kombi::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background-color: #333;
+    top: 10px;
+    left: 10px;
+    border-radius: 3px;
+}
+
+/* Desenho estilizado da Bússola */
+.drawing.compass {
+    border: 6px dashed var(--pogue-gold);
+    border-radius: 50%;
+    position: relative;
+}
+.drawing.compass::before {
+    content: '↑';
+    position: absolute;
+    font-size: 2rem;
+    top: 10px;
+    left: 20px;
+    color: var(--sunset-orange);
+}
+
+/* Desenho estilizado da Prancha de Surf */
+.drawing.surf {
+    width: 30px;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--sunset-orange), var(--pogue-gold));
+    border-radius: 50% 50% 20% 20%;
+}

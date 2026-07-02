@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outer Banks - Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Outer Banks Trivia</h1>
+        <p class="subtitle">Você é um Pogue ou um Kook?</p>
+    </header>
+
+    <main class="container">
+        <div class="card-container">
+            <div class="flashcard" onclick="flipCard()">
+                <div class="card-face card-front">
+                    <h3>Pergunta</h3>
+                    <p id="card-question">Carregando pergunta...</p>
+                    <span class="tap-hint">Clique para virar</span>
+                </div>
+                <div class="card-face card-back">
+                    <h3>Resposta</h3>
+                    <p id="card-answer">Carregando resposta...</p>
+                </div>
+            </div>
+        </div>
+
+        <button id="next-btn" onclick="nextCard()">Próximo Card</button>
+
+        <div class="obx-drawings">
+            <div class="drawing-item">
+                <div class="drawing kombi"></div>
+                <p>The Twinkie (Kombi)</p>
+            </div>
+            <div class="drawing-item">
+                <div class="drawing compass"></div>
+                <p>Bússola do Redfield</p>
+            </div>
+            <div class="drawing-item">
+                <div class="drawing surf"></div>
+                <p>Estilo Pogue Life</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
